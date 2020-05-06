@@ -1,0 +1,87 @@
+.container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto;
+
+}
+
+.battery {
+    width: 160px;
+    height: 60px;
+    border: 4px solid black;
+    margin-top: 10px;
+    margin-left: 40px;
+    position: relative;
+}
+
+.battery::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    top: 15px;
+    left: 160px;
+}
+
+.battery_energy-red {
+    position: relative;
+    width: 30%;
+    height: 94%;
+    background-color: red;
+    padding: 2px;
+}
+
+.battery_energy-red::after {
+    position: relative;
+    z-index: -1;
+    bottom: 2px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 107%;
+    background-color: red;
+    transition: 1s;
+}
+
+.battery_energy-red:hover::after {
+    width: 330%;
+    position: relative;
+    z-index: -1;
+}
+
+.battery_energy-yellow {
+    position: relative;
+    width: 60%;
+    height: 93%;
+    padding: 2px;
+    background-color: yellow;
+}
+
+.battery_energy-yellow::after {
+    content: "";
+    display: block;
+    position: relative;
+    bottom: 2px;
+    width: 0%;
+    height: 107%;
+    background-color: yellow;
+    transition: 1s;
+}
+
+.battery_energy-yellow:hover::after {
+    width: 165%;
+    position: relative;
+    z-index: -1;
+}
+
+.battery_energy-green {
+    position: relative;
+    z-index: -1;
+    width: 98%;
+    height: 94%;
+    padding: 2px;
+    background-color: green;
+}
